@@ -4,25 +4,28 @@ const paletteContainer = document.querySelector('.palette-container')
 generateBtn.addEventListener('click', generatePalette)
 
 paletteContainer.addEventListener('click', e => {
-  if (e.target.classList.contains('copy-btn')) {
-    const hexValue = e.target.previousElementSibling.textContent
-    navigator.clipboard
-			.writeText(hexValue)
-			.then(() => showCopySuccess(e.target))
-			.catch(err => console.log(err))
-  } else if (e.target.classList.contains('color')) {
-    const hexValue = e.target.nextElementSibling.querySelector('.hex-value')
-			.textContent
+  const target = e.target
 
-    navigator.clipboard
-			.writeText(hexValue)
-			.then(() =>
-				showCopySuccess(
-					e.target.nextElementSibling.querySelector('.copy-btn')
-				)
-			)
-			.catch(err => console.log(err))
-  }
+	// Only respond to clicks on the swatch (`.color`) or the copy button
+  if (
+		!target.classList.contains('color') &&
+		!target.classList.contains('copy-btn')
+	) { return }
+
+  const box = target.closest('.color-box')
+  if (!box) return
+
+  const hexEl = box.querySelector('.hex-value')
+  if (!hexEl) return
+  const hexValue = hexEl.textContent
+
+	// prefer the actual button if it exists
+  const copyBtn = box.querySelector('.copy-btn')
+
+  navigator.clipboard
+		.writeText(hexValue)
+		.then(() => showCopySuccess(copyBtn || target))
+		.catch(err => console.log(err))
 })
 
 function showCopySuccess (target) {
