@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="top-div">
+                <h1 class="logo"><img src="/assets/svg/nav-logo.svg" alt=""></h1>
+                <div class="nav-burger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li>
+                        <a href="/">
+                            <i class="fa-solid fa-house"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+                            <i class="fa-solid fa-circle-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Sign up
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Sign in
+                        </a>
+                    </li>
+                </ul>
+                <button>Free Download</button>
+            </div>
+
+        </nav>
+
+        <main>
+            <div class="form-container">
+                <h1>Welcome to Dashboard</h1>
+                <p class="form-text">Enter your email and password to access your account</p>
+                <form action="">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+                    <div class="input-group remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <button type="submit">Sign in</button>
+
+                    <p class="signup-link">Don't have an account? <a href="/signup">Sign up</a></p>
+                </form>
+            </div>
+            <div class="banner-container">
+                <img src="/assets/svg/login-hero.svg" alt="hero image">
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
