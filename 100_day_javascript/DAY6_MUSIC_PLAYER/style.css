@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #C93B76;
+    --secondary-color: #212936;
+    --text-color: #E5E7EB;
+    --gray-color: #4D5562;
+    --gray-color-2: #121826a6;
+    --text-name: 1rem;
+    --text-author: 0.75rem;
+    --text-small: 0.625rem;
+
+
+
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to top right, var(--primary-color) -150%, var(--secondary-color) 100%);
+    font-family: inter, sans-serif;
+    position: relative;
+}
+
+.author-info {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 16px;
+    color: #EEEE;
+}
+
+.author-info a {
+    text-decoration: none;
+    color: #C93B76;
+}
+
+
+.card {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(30, 20, 50, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    text-align: center;
+    color: white;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cover img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: var(--text-name);
+}
+
+.artist {
+    font-size: var(--text-author);
+    opacity: 0.6;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right,
+            #ff3e9d,
+            #ff6ec7);
+}
+
+/* Controls */
+.controls {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+/* Play Button */
+.play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg,
+            #ff3e9d,
+            #ff6ec7);
+
+    box-shadow: 0 10px 25px rgba(255, 62, 157, 0.5);
+}
