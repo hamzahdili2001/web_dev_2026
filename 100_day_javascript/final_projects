@@ -1,3 +1,43 @@
-https://www.figma.com/design/e42i658Rw0l8MPayQIZhIc/Purity-UI-Dashboard---Chakra-UI-Dashboard--Community-?node-id=0-1&p=f&t=02cAoFLmk3bE1Y0b-0
-https://www.figma.com/community/file/1138316365849534403
-https://www.figma.com/community/file/992130027176964480
+-----------------------------------------------------------
+
+I - Full UI Dashboard (Vanilla JS):
+
+    * UI LINK: (https://www.figma.com/design/e42i658Rw0l8MPayQIZhIc/Purity-UI-Dashboard---Chakra-UI-Dashboard--Community-?node-id=0-1&p=f&t=02cAoFLmk3bE1Y0b-0)
+
+    - Complex layouts
+
+    - State management
+
+    - Charts, tables, filters
+
+    - Auth-like flows
+
+    - Real interactions
+
+II - Car Rental Website (Vanilla JS):
+
+    * UI LINK: (https://www.figma.com/community/file/1138316365849534403)
+
+    - CRUD logic
+
+    - Forms + validation
+
+    - Date logic
+
+    - Pricing calculations
+
+    - UI + business logic together
+
+III - Gmail Clone (Vanilla JS):
+
+    * UI LINK: (https://www.figma.com/community/file/992130027176964480)
+
+    - App-level state
+
+    - Inbox / sent / drafts
+
+    - Search + filters
+
+    - Pagination
+
+Component-like architecture (without frameworks)

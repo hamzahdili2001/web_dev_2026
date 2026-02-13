@@ -1,0 +1,24 @@
+my-app/
+├─ index.html            # entry point
+├─ styles/
+│   ├─ main.css          # global styles
+│   └─ components.css    # optional per-component styles
+├─ scripts/
+│   ├─ main.js           # bootstrap, app start
+│   ├─ state/            # app state management
+│   │   └─ store.js
+│   ├─ components/       # UI components
+│   │   ├─ header.js
+│   │   ├─ sidebar.js
+│   │   ├─ dashboard.js
+│   │   └─ card.js
+│   ├─ services/         # API / localStorage / backend logic
+│   │   ├─ api.js
+│   │   └─ storage.js
+│   └─ utils/            # helper functions
+│       ├─ dom.js
+│       └─ helpers.js
+├─ assets/
+│   ├─ images/
+│   └─ icons/
+└─ README.md

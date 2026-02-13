@@ -32,26 +32,31 @@
 
   <div class="card">
     <div class="cover">
-      <img src="/resources/cover-1.jpg" alt="Song Cover" />
+      <img id="cover" src="/resources/cover-1.jpg" alt="Song Cover" />
     </div>
 
-    <h2>Lost in the City Lights</h2>
-    <p class="artist">Cosmo Sheldrake</p>
-
+    <h2 id="title"></h2>
+    <p class="artist" id="author"></p>
+    <audio id="audio"></audio>
     <div class="progress-wrapper">
-      <span>02:23</span>
+      <div class="time">
+        <span id="duration">00:00</span>
+        <span id="current-time">00:00</span>
+      </div>
       <div class="progress">
         <div class="progress-bar"></div>
       </div>
-      <span>03:15</span>
+
     </div>
-    
+
     <div class="controls">
-      <button class="icon"><img src="/resources/Stop_and_play_fill-1.svg" alt=""></button>
-      <button class="play"><img src="/resources/Play_fill.svg" alt=""></button>
-      <button class="icon"><img src="/resources/Stop_and_play_fill_reverse.svg" alt=""></button>
+      <button class="icon" id="next"><img src="/resources/Stop_and_play_fill-1.svg" alt=""></button>
+      <button class="play" id="play"><img src="/resources/Play_fill.svg" alt=""></button>
+      <button class="icon" id="prev"><img src="/resources/Stop_and_play_fill_reverse.svg" alt=""></button>
     </div>
   </div>
+
+  <script src="script.js" defer></script>
 
 </body>
 
