@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Flip the coin | devChallenges.io</title>
+
+</head>
+
+<body>
+  <!-- 
+
+    Flip a Coin Game
+    Press the coin or the button to flip the coin
+    Head
+    Tail
+    Random
+  
+    -->
+
+  <main class="container" aria-labelledby="page-title">
+    <h1 id="page-title">Flip the coin</h1>
+    <h3 id="instructions">Press the coin or the button to flip the coin</h3>
+    <div class="coin" id="coin" role="button" tabindex="0" aria-label="Flip the coin" aria-describedby="instructions"
+      aria-controls="result">
+      <div class="coin-inner">
+
+        <div class="side head active" id="head" aria-hidden="true">
+          <img src="./resources/heads.svg" alt="">
+        </div>
+
+        <div class="side tail" id="tail" aria-hidden="true">
+          <img src="./resources/tails.svg" alt="">
+        </div>
+
+      </div>
+    </div>
+    <div class="tag">
+      <h2 id="result" role="status" aria-live="polite" aria-atomic="true">Heads</h2>
+    </div>
+    <div class="shadow"><img src="./resources/shadow.svg" alt="" aria-hidden="true"></div>
+    <button id="flip-button" type="button" aria-describedby="instructions" aria-controls="result">Random</button>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
