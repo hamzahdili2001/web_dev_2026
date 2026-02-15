@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: outfit, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(17 22 41);
+
+    color: #FFF;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.quote-container {
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #20293A;
+    background-image: url("./resources/bg-image-random-quote.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 447px 304px 151px 0px rgba(0, 0, 0, 0), 286px 195px 138px 0px rgba(0, 0, 0, 0.01),
+        161px 110px 117px 0px rgba(0, 0, 0, 0.05), 72px 49px 87px 0px rgba(0, 0, 0, 0.09),
+        18px 12px 48px 0px rgba(0, 0, 0, 0.1);
+}
+
+.quote-container h1 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.quote-container .tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.quote-container .tags span {
+    color: #AEB0FF;
+    padding: 5px 10px;
+    border: 1px solid #AEB0FF;
+    font-size: 0.625rem;
+    border-radius: 50px;
+}
+
+.quote-container p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.button-container button {
+    background-color: #20293A;
+    color: #FFF;
+    border: none;
+    outline: none;
+    padding: 6px 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+}
+
+.button-container button:hover {
+    background-color: #314466;
+}
+
+.author-info {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 16px;
+    color: rgb(55, 65, 81);
+
+}
+
+.author-info a {
+    text-decoration: none;
+}
