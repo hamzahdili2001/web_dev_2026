@@ -33,6 +33,11 @@ function formValidation (email, password, rememberMe) {
     errors.password = 'Password is required.'
   } else if (cleanedPassword.length < 8) {
     errors.password = 'Password must be at least 8 characters.'
+  } else if (
+		!['@', '#', '_', '%', '$'].some(c => cleanedPassword.includes(c))
+	) {
+    errors.password =
+			'Password must contain at least 1 character of the following @,#,$,_,%'
   }
 
   return {
