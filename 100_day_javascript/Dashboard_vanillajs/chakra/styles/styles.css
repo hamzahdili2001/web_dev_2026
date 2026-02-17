@@ -172,6 +172,10 @@ main {
     border-color: var(--teal-300);
 }
 
+.form-container input.is-invalid {
+    border-color: #ef4444;
+}
+
 .form-container input::placeholder {
     color: var(--gray-400);
     font-size: 0.8rem;
@@ -230,6 +234,13 @@ main {
     text-decoration: underline;
 }
 
+.field-error {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
 /* Right: Banner */
 .banner-container {
     position: relative;
@@ -275,6 +286,31 @@ main {
 
 }
 
+.show-navbar {
+    display: flex;
+}
+
+.message {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    display: none;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: #ef4444;
+}
+
+.valid {
+    display: block;
+    background-color: #14b8a6;
+    border: 1px solid #0d9488;
+    color: #FFF;
+}
+
 @media (max-width:1090px) {
     .navbar {
         flex-direction: column;
@@ -303,5 +339,9 @@ main {
         align-items: center;
         justify-content: space-between;
         width: 100%;
+    }
+
+    .show-navbar {
+        display: flex;
     }
 }
