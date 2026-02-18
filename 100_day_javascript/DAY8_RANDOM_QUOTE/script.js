@@ -3,9 +3,14 @@ const tagsContainer = document.querySelector('.tags')
 const quoteParagraph = document.querySelector('.quote-paragraph')
 const randomBtn = document.getElementById('random')
 const shareBtn = document.getElementById('share')
+const status = document.getElementById('status')
 
 let currentIndex = 0
 let quotes = []
+
+randomBtn.disabled = true
+shareBtn.disabled = true
+status.textContent = 'Loading quotes.'
 
 // Fetch quotes from the API
 fetch(
@@ -18,6 +23,9 @@ fetch(
   currentIndex = getRandomIndex(quotes.length)
 
   displayRandomQuote(currentIndex)
+  status.textContent = 'Quotes loaded.'
+  randomBtn.disabled = false
+  shareBtn.disabled = false
 
   randomBtn.addEventListener('click', () => {
     currentIndex = getRandomIndex(quotes.length)
@@ -28,6 +36,8 @@ fetch(
 })
 	.catch(error => {
   console.error('Error fetching quotes:', error)
+  status.textContent =
+			'Could not load quotes. Please refresh and try again.'
 })
 
 function getRandomIndex (length) {
@@ -38,6 +48,7 @@ function displayRandomQuote (index) {
   const quote = quotes[index]
   author.textContent = quote.author
   quoteParagraph.textContent = quote.quote
+  author.setAttribute('aria-label', `Author: ${quote.author}`)
 
   tagsContainer.innerHTML = ''
 
@@ -47,6 +58,8 @@ function displayRandomQuote (index) {
 
     tagsContainer.appendChild(span)
   })
+
+  status.textContent = `Quote updated: ${quote.author}`
 }
 
 function shareQuote (index) {
@@ -58,9 +71,9 @@ function shareQuote (index) {
 
     navigator.share({ text })
 
-    alert('Quote copied!')
+    status.textContent = 'Quote copied and ready to share.'
   } else {
     navigator.clipboard.writeText(text)
-    alert('Quote copied!')
+    status.textContent = 'Quote copied.'
   }
 }

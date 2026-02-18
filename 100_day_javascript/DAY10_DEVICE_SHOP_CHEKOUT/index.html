@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+  <title>Device Shop Checkout | devChallenges.io</title>
+</head>
+
+
+<body>
+
+  <div class="background">
+    <h1>Checkout <span id="items-count">3 items</span></h1>
+  </div>
+
+  <div class="content-container">
+    <div class="left-side">
+      <!-- Product 1 -->
+      <div class="product">
+        <div class="image">
+          <img src="./resources/Gold.png" alt="">
+        </div>
+        <div class="content">
+          <div class="product-info">
+            <div class="top">
+              <div class="product-name">
+                <div class="name">
+                  <h3>iPhone 12 Pro</h3>
+                  <span>Golden</span>
+                </div>
+                <div class="price">
+                  $999.00
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="many">
+                x 1
+              </div>
+              <button class="remove">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <div class="image">
+          <img src="./resources/Apple-watch.png" alt="">
+        </div>
+        <div class="content">
+          <div class="product-info">
+            <div class="top">
+              <div class="product-name">
+                <div class="name">
+                  <h3>Apple Watch</h3>
+                  <span>Blue</span>
+                </div>
+                <div class="price">
+                  $399.00
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="many">
+                x 1
+              </div>
+              <button class="remove">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <div class="image">
+          <img src="./resources/iMac.png" alt="">
+        </div>
+        <div class="content">
+          <div class="product-info">
+            <div class="top">
+              <div class="product-name">
+                <div class="name">
+                  <h3>iMac</h3>
+                  <span>Green</span>
+                </div>
+                <div class="price">
+                  $1199.00
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="many">
+                x 1
+              </div>
+              <button class="remove">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="coupon-input">
+        <input type="text" placeholder="Enter coupon code">
+        <button>Apply Coupon</button>
+      </div>
+
+      <div class="total-container">
+        <div class="sub-total">
+          <h4>Sub Total</h4>
+          <h4>$2597.00</h4>
+        </div>
+        <div class="tax">
+          <h4>Tax</h4>
+          <h4>$623.28</h4>
+        </div>
+        <div class="total">
+          <h4>Total</h4>
+          <h4>$3220.28</h4>
+        </div>
+      </div>
+    </div>
+    <div class="right-side">
+      <h3>Contact Information</h3>
+      <div class="form-group">
+        <label for="name">First & Last name</label>
+        <input id="name" type="text" placeholder="Enter First & Last name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="Enter First & Last name">
+      </div>
+
+      <div class="form-group form-flex">
+        <div>
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="finland">Finland</option>
+          </select>
+        </div>
+        <div>
+          <label for="post-code">Post Code</label>
+          <input id="post-code" type="text" placeholder="00270">
+        </div>
+      </div>
+      <button>Continue</button>
+      <form>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
