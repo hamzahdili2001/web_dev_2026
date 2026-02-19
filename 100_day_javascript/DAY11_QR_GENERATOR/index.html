@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card">
+        <h1>QR Code Generator</h1>
+        <p>Type text or a URL and generate a downloadable QR code.</p>
+
+        <form id="qr-form" class="controls">
+          <label for="qr-text" class="label">Text or URL</label>
+          <input
+            id="qr-text"
+            type="text"
+            placeholder="https://example.com"
+            autocomplete="off"
+          />
+
+          <label for="qr-size" class="label">Size</label>
+          <select id="qr-size">
+            <option value="200">200 x 200</option>
+            <option value="300" selected>300 x 300</option>
+            <option value="400">400 x 400</option>
+          </select>
+
+          <div class="actions">
+            <button type="submit" id="generate-btn">Generate QR</button>
+            <button type="button" id="download-btn" disabled>Download PNG</button>
+          </div>
+        </form>
+
+        <p id="message" class="message" aria-live="polite"></p>
+
+        <div class="result">
+          <img id="qr-image" alt="Generated QR code" />
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
