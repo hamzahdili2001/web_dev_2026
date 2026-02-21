@@ -23,14 +23,16 @@
     <section class="step active" id="step-1">
       <div class="step-card">
         <h1>Register</h1>
-        <form>
+        <form id="register-form" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Enter your name" autocomplete="name">
+            <input id="name" type="text" placeholder="Enter your name" autocomplete="name" required>
+            <p class="field-error" id="name-error" aria-live="polite"></p>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Example@gmail.com" autocomplete="email">
+            <input id="email" type="email" placeholder="Example@gmail.com" autocomplete="email" required>
+            <p class="field-error" id="email-error" aria-live="polite"></p>
           </div>
           <button type="button" class="continue-btn">
             Continue
@@ -52,13 +54,22 @@
       <div class="step-card">
         <h1>Which topics you are interested in?</h1>
         <div class="topics-list">
-          <button type="button" class="topic-btn">Software Development</button>
-          <button type="button" class="topic-btn active">User Experience</button>
-          <button type="button" class="topic-btn">Graphic Design</button>
+          <button type="button" class="topic-btn" data-topic="Software Development" aria-pressed="false">Software
+            Development</button>
+          <button type="button" class="topic-btn" data-topic="User Experience" aria-pressed="false">User
+            Experience</button>
+          <button type="button" class="topic-btn" data-topic="Graphic Design" aria-pressed="false">Graphic
+            Design</button>
         </div>
-        <button type="button" class="continue-btn">
-          Continue
-        </button>
+        <p class="field-error" id="topic-error" aria-live="polite"></p>
+        <div class="step-actions">
+          <button type="button" class="prev-btn">
+            Previous
+          </button>
+          <button type="button" class="continue-btn">
+            Continue
+          </button>
+        </div>
       </div>
 
       <div class="step-progress" aria-label="Progress indicator">
@@ -75,17 +86,19 @@
       <div class="step-card summary-card">
         <h1>Summary</h1>
         <div class="summary-content">
-          <p class="summary-line">Name: <strong>Emily Johnson</strong></p>
-          <p class="summary-line">Email: <strong>emily@emilyjohnsonstl.com</strong></p>
+          <p class="summary-line">Name: <strong id="summary-name"></strong></p>
+          <p class="summary-line">Email: <strong id="summary-email"></strong></p>
           <p class="summary-label">Topics:</p>
-          <ul>
-            <li><strong>User Experience</strong></li>
-            <li><strong>Graphic Design</strong></li>
-          </ul>
+          <ul id="summary-topics"></ul>
         </div>
-        <button type="button" class="continue-btn">
-          Continue
-        </button>
+        <div class="step-actions">
+          <button type="button" class="prev-btn">
+            Previous
+          </button>
+          <button type="button" class="continue-btn">
+            Continue
+          </button>
+        </div>
       </div>
 
       <div class="step-progress" aria-label="Progress indicator">
@@ -99,6 +112,18 @@
     </section>
   </div>
 
+  <div class="success-modal" id="success-modal" aria-hidden="true">
+    <div class="success-popup" role="dialog" aria-modal="true" aria-labelledby="success-title">
+      <button type="button" class="success-close" id="success-close" aria-label="Close success popup">×</button>
+      <div class="success-icon" aria-hidden="true">
+        <span class="checkmark"></span>
+      </div>
+      <h2 id="success-title">Registration Complete</h2>
+      <p>Your information was submitted successfully.</p>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
