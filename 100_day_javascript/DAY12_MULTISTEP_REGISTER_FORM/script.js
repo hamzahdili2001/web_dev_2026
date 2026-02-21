@@ -14,10 +14,12 @@ const summaryName = document.querySelector('#summary-name')
 const summaryEmail = document.querySelector('#summary-email')
 const summaryTopics = document.querySelector('#summary-topics')
 const successModal = document.querySelector('#success-modal')
+const successPopup = document.querySelector('.success-popup')
 const successCloseButton = document.querySelector('#success-close')
 
 let currentStep = 0
 const stepsCount = steps.length
+let lastFocusedElement = null
 
 function setError (element, errorElement, message) {
   element.classList.toggle('invalid', Boolean(message))
@@ -96,12 +98,18 @@ function updateSummary () {
 function setActiveStep (stepIndex) {
   steps.forEach((step, index) => {
     step.classList.toggle('active', index === stepIndex)
+    step.setAttribute('aria-hidden', String(index !== stepIndex))
   })
 
   dotGroups.forEach(group => {
     const dots = group.querySelectorAll('.dot')
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === stepIndex)
+      if (index === stepIndex) {
+        dot.setAttribute('aria-current', 'step')
+      } else {
+        dot.removeAttribute('aria-current')
+      }
     })
   })
 
@@ -109,13 +117,18 @@ function setActiveStep (stepIndex) {
 }
 
 function openSuccessPopup () {
+  lastFocusedElement = document.activeElement
   successModal.classList.add('show')
   successModal.setAttribute('aria-hidden', 'false')
+  successPopup.focus()
 }
 
 function closeSuccessPopup () {
   successModal.classList.remove('show')
   successModal.setAttribute('aria-hidden', 'true')
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus()
+  }
 }
 
 function goToNextStep () {

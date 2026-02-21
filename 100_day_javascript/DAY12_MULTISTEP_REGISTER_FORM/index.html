@@ -4,6 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Accessible multi-step registration form with validation, selectable topics, and a final summary." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#111729" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Multi-step Register Form" />
+  <meta property="og:description"
+    content="Accessible multi-step registration form with validation, selectable topics, and a final summary." />
+  <meta property="og:image" content="thumbnail.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Multi-step Register Form" />
+  <meta name="twitter:description"
+    content="Accessible multi-step registration form with validation, selectable topics, and a final summary." />
+  <meta name="twitter:image" content="thumbnail.jpg" />
 
   <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
 
@@ -13,17 +28,20 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <title>Multi-step Register Form | devChallenges.io</title>
+  <title>Multi-step Register Form | Accessible Signup Flow</title>
 
 
 </head>
 
 <body>
-  <div class="form-container">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main class="form-container" id="main-content">
     <section class="step active" id="step-1">
       <div class="step-card">
-        <h1>Register</h1>
-        <form id="register-form" novalidate>
+        <h1 id="form-title">Register</h1>
+        <p class="visually-hidden" id="step-instructions">Complete each step and use Continue to proceed.</p>
+        <form id="register-form" aria-labelledby="form-title" aria-describedby="step-instructions" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
             <input id="name" type="text" placeholder="Enter your name" autocomplete="name" required>
@@ -41,18 +59,18 @@
       </div>
 
       <div class="step-progress" aria-label="Progress indicator">
-        <p class="step-text">Step 1 of 3</p>
+        <p class="step-text" aria-live="polite">Step 1 of 3</p>
         <div class="step-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <button type="button" class="dot active" aria-label="Go to step 1" aria-current="step"></button>
+          <button type="button" class="dot" aria-label="Go to step 2"></button>
+          <button type="button" class="dot" aria-label="Go to step 3"></button>
         </div>
       </div>
     </section>
 
     <section class="step" id="step-2">
       <div class="step-card">
-        <h1>Which topics you are interested in?</h1>
+        <h2>Which topics you are interested in?</h2>
         <div class="topics-list">
           <button type="button" class="topic-btn" data-topic="Software Development" aria-pressed="false">Software
             Development</button>
@@ -73,18 +91,17 @@
       </div>
 
       <div class="step-progress" aria-label="Progress indicator">
-        <p class="step-text">Step 2 of 3</p>
+        <p class="step-text" aria-live="polite">Step 2 of 3</p>
         <div class="step-dots">
-          <span class="dot"></span>
-          <span class="dot active"></span>
-          <span class="dot"></span>
+          <button type="button" class="dot" aria-label="Go to step 1"></button>
+          <button type="button" class="dot active" aria-label="Go to step 2" aria-current="step"></button>
+          <button type="button" class="dot" aria-label="Go to step 3"></button>
         </div>
       </div>
     </section>
-
     <section class="step" id="step-3">
       <div class="step-card summary-card">
-        <h1>Summary</h1>
+        <h2>Summary</h2>
         <div class="summary-content">
           <p class="summary-line">Name: <strong id="summary-name"></strong></p>
           <p class="summary-line">Email: <strong id="summary-email"></strong></p>
@@ -102,24 +119,25 @@
       </div>
 
       <div class="step-progress" aria-label="Progress indicator">
-        <p class="step-text">Step 3 of 3</p>
+        <p class="step-text" aria-live="polite">Step 3 of 3</p>
         <div class="step-dots">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot active"></span>
+          <button type="button" class="dot" aria-label="Go to step 1"></button>
+          <button type="button" class="dot" aria-label="Go to step 2"></button>
+          <button type="button" class="dot active" aria-label="Go to step 3" aria-current="step"></button>
         </div>
       </div>
     </section>
-  </div>
+  </main>
 
   <div class="success-modal" id="success-modal" aria-hidden="true">
-    <div class="success-popup" role="dialog" aria-modal="true" aria-labelledby="success-title">
+    <div class="success-popup" role="dialog" aria-modal="true" aria-labelledby="success-title"
+      aria-describedby="success-description" tabindex="-1">
       <button type="button" class="success-close" id="success-close" aria-label="Close success popup">×</button>
       <div class="success-icon" aria-hidden="true">
         <span class="checkmark"></span>
       </div>
       <h2 id="success-title">Registration Complete</h2>
-      <p>Your information was submitted successfully.</p>
+      <p id="success-description">Your information was submitted successfully.</p>
     </div>
   </div>
 
