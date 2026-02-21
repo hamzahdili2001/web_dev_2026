@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Multi-step Register Form | devChallenges.io</title>
+
+
+</head>
+
+<body>
+  <div class="form-container">
+    <section class="step active" id="step-1">
+      <div class="step-card">
+        <h1>Register</h1>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Enter your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Example@gmail.com" autocomplete="email">
+          </div>
+          <button type="button" class="continue-btn">
+            Continue
+          </button>
+        </form>
+      </div>
+
+      <div class="step-progress" aria-label="Progress indicator">
+        <p class="step-text">Step 1 of 3</p>
+        <div class="step-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="step-2">
+      <div class="step-card">
+        <h1>Which topics you are interested in?</h1>
+        <div class="topics-list">
+          <button type="button" class="topic-btn">Software Development</button>
+          <button type="button" class="topic-btn active">User Experience</button>
+          <button type="button" class="topic-btn">Graphic Design</button>
+        </div>
+        <button type="button" class="continue-btn">
+          Continue
+        </button>
+      </div>
+
+      <div class="step-progress" aria-label="Progress indicator">
+        <p class="step-text">Step 2 of 3</p>
+        <div class="step-dots">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="step-3">
+      <div class="step-card summary-card">
+        <h1>Summary</h1>
+        <div class="summary-content">
+          <p class="summary-line">Name: <strong>Emily Johnson</strong></p>
+          <p class="summary-line">Email: <strong>emily@emilyjohnsonstl.com</strong></p>
+          <p class="summary-label">Topics:</p>
+          <ul>
+            <li><strong>User Experience</strong></li>
+            <li><strong>Graphic Design</strong></li>
+          </ul>
+        </div>
+        <button type="button" class="continue-btn">
+          Continue
+        </button>
+      </div>
+
+      <div class="step-progress" aria-label="Progress indicator">
+        <p class="step-text">Step 3 of 3</p>
+        <div class="step-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active"></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+
+</html>
