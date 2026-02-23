@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+    font-family: Urbanist, sans-serif;
+    color: #FFF;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    min-height: 100vh;
+}
+
+.hero nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    border-right: 3px solid rgba(221, 221, 221, 0.5);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.hero nav h1 img {
+    width: 20px;
+    min-height: 40%;
+}
+
+.hero nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 60%;
+}
+
+.hero nav a img {
+    width: 40px;
+    height: 40px;
+}
+
+.hero .main-movie {
+    background: url('./assets/test-bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.search-section {
+    min-height: 38vh;
+    padding: 2.5rem 1rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 0%, rgba(190, 0, 16, 0.18), rgba(0, 0, 0, 0.94) 52%);
+}
+
+.search-shell {
+    width: min(760px, 100%);
+}
+
+.movie-search {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: center;
+    height: 72px;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: linear-gradient(115deg, rgba(0, 0, 0, 0.72), rgba(26, 26, 26, 0.66));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(190, 0, 16, 0.25);
+}
+
+.movie-search .search-icon {
+    width: 24px;
+    height: 24px;
+    justify-self: center;
+    filter: brightness(0) saturate(100%) invert(32%) sepia(99%) saturate(2804%) hue-rotate(344deg) brightness(93%) contrast(103%);
+}
+
+.movie-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.15rem;
+    letter-spacing: 0.2px;
+}
+
+.movie-search input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.movie-search button {
+    border: none;
+    height: 56px;
+    padding: 0 1.4rem;
+    border-radius: 14px;
+    background: linear-gradient(125deg, #a70011, #d50017);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.movie-search button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 8px 18px rgba(213, 0, 23, 0.35);
+}
+
+.hero .main-movie .main-movie-content h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hero .main-movie .main-movie-content p {
+    max-width: 550px;
+    color: #DDD;
+    font-size: 1rem;
+    margin: 20px 0;
+}
+
+.hero .main-movie .main-movie-content button {
+    background: none;
+    border: none;
+    color: #FFF;
+}
+
+.hero .main-movie .main-movie-content button:first-child {
+    background-color: rgba(190, 0, 16, 0.5);
+    padding: 10px 25px;
+    font-weight: 300;
+    font-size: 1.2rem;
+    border-radius: 10px 1px 10px 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.hero .main-movie .main-movie-content button:first-child:hover {
+    background-color: rgba(190, 0, 16);
+}
+
+.hero .main-movie .main-movie-content button:last-child {
+    font-size: 1.2rem;
+    border-bottom: 2px solid #FFF;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .movie-search {
+        height: 64px;
+        grid-template-columns: 48px 1fr auto;
+    }
+
+    .movie-search input {
+        font-size: 1rem;
+    }
+
+    .movie-search button {
+        height: 48px;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        grid-template-columns: 64px 1fr;
+    }
+
+    .hero nav {
+        gap: 24px;
+        padding: 14px 10px;
+    }
+
+    .hero nav a img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .search-section {
+        min-height: 34vh;
+        padding: 2rem 0.8rem 2.5rem;
+    }
+
+    .movie-search {
+        grid-template-columns: 44px 1fr;
+        height: auto;
+        row-gap: 10px;
+        padding: 10px;
+    }
+
+    .movie-search button {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
