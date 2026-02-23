@@ -38,23 +38,44 @@
                     odio voluptates?</p>
 
                 <div class="buttons">
-                    <button>Play</button>
-                    <button>Watch Trailer</button>
+                    <button id="hero-play-btn" class="hero-action hero-action-play" type="button">Play</button>
+                    <button id="hero-trailer-btn" class="hero-action hero-action-trailer" type="button">Watch
+                        Trailer</button>
                 </div>
             </div>
+
+            <button id="scroll-down-btn" class="scroll-down-btn" type="button" aria-label="Scroll to movies section">
+                <span class="scroll-text">Scroll</span>
+                <span class="scroll-arrow"></span>
+            </button>
         </div>
     </section>
 
-    <section class="search-section" aria-label="Movie search">
+    <section class="movies-section" aria-label="Popular movies">
         <div class="search-shell" role="search">
-            <form class="movie-search" action="#">
+            <form class="movie-search" id="movie-search-form" action="#">
                 <img src="./assets/search-icon.svg" alt="search" class="search-icon">
-                <input type="text" name="movie" placeholder="Search movies, actors, genres..."
-                    aria-label="Search movies">
-                <button type="submit">Explore</button>
+                <input id="movie-search-input" type="text" name="movie" placeholder="Search movies, actors, genres..."
+                    aria-label="Search movies" autocomplete="off">
+                <button id="movie-search-btn" type="submit">Explore</button>
             </form>
+            <p class="search-status" id="search-status">Type a movie name and press Explore.</p>
         </div>
+
+        <div class="movies-heading">
+            <p id="movies-label">Now Streaming</p>
+            <h2 id="movies-title">Popular Movies</h2>
+        </div>
+        <div class="movie-list" id="movie-list"></div>
     </section>
+
+    <div class="movie-modal" id="movie-modal" aria-hidden="true">
+        <div class="movie-modal-backdrop" id="movie-modal-backdrop"></div>
+        <article class="movie-modal-panel" role="dialog" aria-modal="true" aria-labelledby="movie-modal-title">
+            <button class="movie-modal-close" id="movie-modal-close" type="button" aria-label="Close movie details">×</button>
+            <div class="movie-modal-body" id="movie-modal-body"></div>
+        </article>
+    </div>
 
     <script type="module" src="script.js"></script>
 </body>
